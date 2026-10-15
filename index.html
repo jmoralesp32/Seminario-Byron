@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Comics Colector | Tu tienda de cómics</title>
+<meta name="description" content="Comics Colector: cómics nuevos, ediciones de colección y pedidos especiales para fanáticos de verdad.">
+<style>
+:root{
+  --negro:#000; --carbon:#141414; --rojo:#e10600; --rojo-osc:#a30400; --blanco:#f7f4ef;
+  --display:Impact,"Arial Narrow Bold","Haettenschweiler",sans-serif;
+  --texto:"Trebuchet MS","Segoe UI",system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--negro);color:var(--blanco);font-family:var(--texto);line-height:1.6}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--blanco);outline-offset:3px}
+.wrap{max-width:1000px;margin:0 auto;padding:0 20px}
+
+/* Encabezado */
+header{background:var(--rojo);color:var(--negro);position:relative;overflow:hidden;border-bottom:6px solid var(--blanco)}
+header::before{content:"";position:absolute;inset:0;background:radial-gradient(var(--rojo-osc) 22%,transparent 24%) 0 0/16px 16px;opacity:.55}
+.hero{position:relative;padding:64px 0 72px;text-align:left}
+.hero h1{font-family:var(--display);font-weight:400;font-size:clamp(3rem,13vw,7.5rem);line-height:.9;letter-spacing:.01em;text-transform:uppercase;color:var(--negro);text-shadow:4px 4px 0 var(--blanco)}
+.bocadillo{display:inline-block;position:relative;margin-top:28px;background:var(--blanco);color:var(--negro);border:4px solid var(--negro);border-radius:18px;padding:12px 20px;font-weight:700;font-size:clamp(1rem,3.4vw,1.35rem);transform:rotate(-1.5deg)}
+.bocadillo::after{content:"";position:absolute;left:34px;top:100%;border:14px solid transparent;border-top-color:var(--negro);border-bottom:0;margin-top:0}
+.bocadillo::before{content:"";position:absolute;left:38px;top:calc(100% - 4px);border:10px solid transparent;border-top-color:var(--blanco);border-bottom:0;z-index:1}
+
+/* Secciones */
+section{padding:64px 0}
+h2{font-family:var(--display);font-weight:400;font-size:clamp(2rem,7vw,3.2rem);text-transform:uppercase;letter-spacing:.02em;margin-bottom:22px}
+h2 span{background:var(--rojo);color:var(--negro);padding:0 12px;display:inline-block;transform:skew(-6deg)}
+.sobre{display:grid;gap:28px;align-items:center}
+.sobre p{font-size:1.1rem;max-width:62ch}
+.sobre .panel{background:var(--carbon);border:4px solid var(--blanco);box-shadow:8px 8px 0 var(--rojo);padding:28px;font-size:4.5rem;text-align:center;line-height:1}
+.sobre .panel small{display:block;font-family:var(--display);font-size:1.4rem;margin-top:10px;color:var(--rojo)}
+@media(min-width:760px){.sobre{grid-template-columns:2fr 1fr}}
+
+/* Tarjetas */
+.tarjetas{display:grid;gap:26px}
+@media(min-width:760px){.tarjetas{grid-template-columns:repeat(3,1fr)}}
+.tarjeta{background:var(--carbon);border:4px solid var(--blanco);box-shadow:8px 8px 0 var(--rojo);padding:26px;display:flex;flex-direction:column;gap:10px}
+.tarjeta .icono{font-size:2.6rem;width:72px;height:72px;display:grid;place-items:center;background:var(--rojo);border:4px solid var(--negro);outline:3px solid var(--blanco)}
+.tarjeta h3{font-family:var(--display);font-weight:400;font-size:1.7rem;letter-spacing:.02em;text-transform:uppercase;margin-top:8px}
+.tarjeta p{color:#d9d5ce}
+
+/* Contacto */
+.contacto{background:var(--rojo);color:var(--negro);text-align:center;border-top:6px solid var(--blanco);border-bottom:6px solid var(--blanco)}
+.contacto h2{color:var(--negro)}
+.contacto h2 span{background:var(--negro);color:var(--blanco)}
+.contacto p{max-width:48ch;margin:0 auto 28px;font-weight:700;font-size:1.1rem}
+.boton{display:inline-block;background:var(--negro);color:var(--blanco);font-family:var(--display);font-size:1.6rem;letter-spacing:.04em;text-transform:uppercase;text-decoration:none;padding:14px 34px;border:4px solid var(--blanco);box-shadow:6px 6px 0 var(--blanco);transition:transform .12s,box-shadow .12s}
+.boton:hover{transform:translate(3px,3px);box-shadow:3px 3px 0 var(--blanco)}
+.boton:active{transform:translate(6px,6px);box-shadow:0 0 0 var(--blanco)}
+
+/* Pie */
+footer{padding:36px 0;text-align:center}
+.redes{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-bottom:18px}
+.redes a{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border:3px solid var(--blanco);text-decoration:none;font-weight:700;min-height:44px}
+.redes a:hover{background:var(--rojo);color:var(--negro);border-color:var(--rojo)}
+footer small{color:#a9a49b}
+
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.boton{transition:none}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap hero">
+    <h1>Comics Colector</h1>
+    <p class="bocadillo">¡Cada viñeta cuenta, y la tuya está aquí!</p>
+  </div>
+</header>
+
+<main>
+  <section id="sobre">
+    <div class="wrap sobre">
+      <div>
+        <h2><span>Sobre nosotros</span></h2>
+        <p>En Comics Colector vendemos cómics para quienes los leen, los coleccionan y los cuidan como tesoros. Somos fanáticos igual que tú: sabemos lo que se siente encontrar el número que te faltaba o estrenar la saga que todos comentan. Nuestro trabajo es ayudarte a completar tu colección y descubrir historias nuevas, con atención cercana y cómics en excelente estado.</p>
+      </div>
+      <div class="panel" aria-hidden="true">📚<small>¡POW!</small></div>
+    </div>
+  </section>
+
+  <section id="servicios" style="padding-top:0">
+    <div class="wrap">
+      <h2><span>Lo que ofrecemos</span></h2>
+      <div class="tarjetas">
+        <article class="tarjeta">
+          <div class="icono" aria-hidden="true">🦸</div>
+          <h3>Cómics nuevos</h3>
+          <p>Los últimos lanzamientos de superhéroes, manga y novela gráfica, directo a tus manos.</p>
+        </article>
+        <article class="tarjeta">
+          <div class="icono" aria-hidden="true">💎</div>
+          <h3>Ediciones de colección</h3>
+          <p>Números clásicos, portadas alternas y ediciones limitadas protegidas en bolsa y respaldo.</p>
+        </article>
+        <article class="tarjeta">
+          <div class="icono" aria-hidden="true">🔎</div>
+          <h3>Pedidos especiales</h3>
+          <p>¿Buscas un número que no encuentras? Te ayudamos a rastrearlo para completar tu colección.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto" class="contacto">
+    <div class="wrap">
+      <h2><span>Escríbenos</span></h2>
+      <p>Cuéntanos qué cómic buscas y te respondemos por correo.</p>
+      <a class="boton" href="mailto:jmoralesp32@miumg.edu.gt?subject=Consulta%20desde%20Comics%20Colector">Contactar</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <ul class="redes">
+      <li><a href="https://www.facebook.com/" target="_blank" rel="noopener">📘 Facebook</a></li>
+      <li><a href="https://www.instagram.com/" target="_blank" rel="noopener">📸 Instagram</a></li>
+      <li><a href="https://www.tiktok.com/" target="_blank" rel="noopener">🎵 TikTok</a></li>
+    </ul>
+    <small>© <span id="anio"></span> Comics Colector. Todos los derechos reservados.</small>
+  </div>
+</footer>
+
+<script>
+  document.getElementById("anio").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
